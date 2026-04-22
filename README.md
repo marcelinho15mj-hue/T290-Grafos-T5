@@ -19,14 +19,12 @@
 
 ## 📌 Descrição do Projeto
 
-Este projeto implementa o algoritmo **DSatur (Degree of Saturation)** para a resolução do problema de **Coloração de Grafos**. 
-
-O objetivo é atribuir uma cor a cada vértice de um grafo de forma que dois vértices adjacentes nunca compartilhem a mesma cor, buscando minimizar o número total de cores utilizadas através de uma abordagem heurística.
+Este projeto aplica a teoria dos grafos para resolver o problema de coloração do mapa político do Brasil. Utilizamos o algoritmo DSatur (Degree of Saturation) para garantir que nenhum estado brasileiro compartilhe a mesma cor com seus vizinhos de fronteira terrestre, buscando atingir o número cromático do grafo de forma eficiente.
 
 ### Funcionamento do DSatur:
-1. **Grau de Saturação:** O algoritmo seleciona o próximo vértice a ser colorido com base no número de cores diferentes já presentes em seus vizinhos.
-2. **Critério de Desempate:** Caso haja empate na saturação, escolhe-se o vértice com o maior grau no grafo original.
-3. **Atribuição de Cores:** O vértice recebe a primeira cor disponível de uma lista predefinida (Verde, Amarelo, Azul, Branco, etc.).
+1. **Grau de Saturação:** O sistema identifica qual estado está mais "pressionado" por vizinhos já coloridos. Por exemplo, se Minas Gerais (MG) tem vizinhos coloridos com Verde e Amarelo, sua saturação é 2. O algoritmo sempre colore primeiro quem tem a maior saturação.
+2. **Critério de Desempate (Grau do Estado):** Em caso de empate, o algoritmo escolhe o estado com mais fronteiras terrestres no total (maior grau). Isso ajuda a reduzir conflitos rapidamente em regiões densas como o Sudeste e Nordeste.
+3. **Atribuição de Cores Nominais:** Diferente de implementações básicas que usam números (1, 2, 3), este projeto atribui nomes de cores reais (Verde, Amarelo, Azul, etc.), facilitando a visualização e interpretação do resultado final.
 
 ---
 
