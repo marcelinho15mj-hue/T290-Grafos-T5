@@ -32,8 +32,6 @@ O objetivo é atribuir uma cor a cada vértice de um grafo de forma que dois vé
 
 ## Como executar
 
-Acesse a pasta do projeto: cd src
-
 Execute o programa: py src/main.py dados/brasil.txt
 
 ## 📁 Estrutura do Projeto
