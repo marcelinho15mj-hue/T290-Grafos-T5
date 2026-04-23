@@ -12,7 +12,8 @@
 
 ## Grupo B
 ```
-## 👥 Alunos
+👥 Alunos
+
 * Bernardo Pinheiro  
 * Marcelo Kalsovik Junior  
 * Guilherme Abrunheiro De Souza  
