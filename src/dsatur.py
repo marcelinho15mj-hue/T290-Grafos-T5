@@ -1,5 +1,4 @@
 def get_saturation_degree(graph, v, colors):
-    """Calcula o grau de saturação usando o iterador manual do Bag."""
     neighbor_colors = set()
     it = iter(graph.adj[v])
     while True:
@@ -12,7 +11,6 @@ def get_saturation_degree(graph, v, colors):
     return len(neighbor_colors)
 
 def get_lowest_available_color(graph, v, colors, color_names):
-    """Encontra a menor cor disponível não usada pelos vizinhos."""
     forbidden_colors = set()
     it = iter(graph.adj[v])
     while True:
@@ -29,7 +27,6 @@ def get_lowest_available_color(graph, v, colors, color_names):
     return "Cor Extra"
 
 def dsatur_algorithm(graph):
-    """Executa o DSatur respeitando os critérios de desempate."""
     color_names = ["Verde", "Amarelo", "Azul", "Branco", "Vermelho", "Roxo", "Laranja", "Rosa", "Cinza", "Preto"]
     colors = {}
     order_of_coloring = []
