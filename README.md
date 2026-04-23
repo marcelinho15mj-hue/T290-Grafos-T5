@@ -10,6 +10,8 @@
 
 ---
 
+## Grupo B
+
 ## 👥 Alunos
 * Bernardo Pinheiro  
 * Marcelo Kalsovik Junior  
