@@ -1,7 +1,6 @@
 import sys
 import os
 
-# Ajuste de path para localizar os módulos na pasta src
 sys.path.append(os.path.dirname(__file__))
 
 from graph import Graph
@@ -20,7 +19,6 @@ def validate_coloring(graph, colors):
     return True
 
 def main():
-    # Mapeamento oficial exigido pelo enunciado
     mapeamento = {
         0:"AC", 1:"AL", 2:"AM", 3:"AP", 4:"BA", 5:"CE", 6:"DF", 7:"ES", 8:"GO", 9:"MA",
         10:"MG", 11:"MS", 12:"MT", 13:"PA", 14:"PB", 15:"PE", 16:"PI", 17:"PR", 18:"RJ",
@@ -40,7 +38,6 @@ def main():
             E_count = int(lines[1])
             g = Graph(V_count)
             
-            # Lê apenas a quantidade de arestas especificada no cabeçalho
             for i in range(2, 2 + E_count):
                 v, w = lines[i].split()
                 g.add_edge(v, w)
@@ -49,7 +46,6 @@ def main():
         return
 
     print("--- LISTA DE ADJACÊNCIA (ESTADOS) ---")
-    # Imprime a lista de adjacência usando as siglas
     for v in range(g.V):
         vizinhos = []
         it = iter(g.adj[v])
@@ -61,7 +57,6 @@ def main():
                 break
         print(f"{mapeamento[v]}: {' '.join(vizinhos)}")
 
-    # Executa o DSatur
     colors, order = dsatur_algorithm(g)
     
     unique_colors_used = set(colors.values())

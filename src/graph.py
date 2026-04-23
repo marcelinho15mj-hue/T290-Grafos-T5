@@ -7,14 +7,9 @@ class Graph:
         self.adj = [Bag() for _ in range(self.V)]
 
     def __str__(self):
-        """
-        Retorna a lista de adjacência formatada como string.
-        Ajustado para evitar erro de LinkIterator não iterável.
-        """
         lines = ["%d vertices, %d edges" % (self.V, self.E)]
         for v in range(self.V):
             neighbors_list = []
-            # Obtemos o iterador manualmente para compatibilidade com algs4.bag
             it = iter(self.adj[v])
             while True:
                 try:
@@ -26,25 +21,21 @@ class Graph:
         return "\n".join(lines)
 
     def add_edge(self, v, w):
-        """Adiciona uma aresta não direcionada entre v e w."""
         v, w = int(v), int(w)
         self.adj[v].add(w)
         self.adj[w].add(v)
         self.E += 1
 
     def degree(self, v):
-        """Retorna o número de vizinhos do vértice v."""
         return self.adj[v].size()
 
     def max_degree(self):
-        """Retorna o maior grau encontrado no grafo."""
         max_deg = 0
         for v in range(self.V):
             max_deg = max(max_deg, self.degree(v))
         return max_deg
 
     def number_of_self_loops(self):
-        """Conta o número de laços (arestas de um vértice para ele mesmo)."""
         count = 0
         for v in range(self.V):
             it = iter(self.adj[v])
@@ -67,7 +58,6 @@ if __name__ == '__main__':
 
     try:
         with open(sys.argv[1], 'r') as f:
-            # Filtra linhas vazias para evitar erros de leitura
             lines = [line.strip() for line in f if line.strip()]
             
             if not lines:
@@ -78,7 +68,6 @@ if __name__ == '__main__':
             E = int(lines[1])
             g = Graph(V)
             
-            # Processa cada aresta definida no arquivo
             for i in range(2, 2 + E):
                 parts = lines[i].split()
                 if len(parts) >= 2:
